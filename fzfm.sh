@@ -1,8 +1,9 @@
 #! /usr/bin/env bash
-# building a terminal file manager in bash youtube
+# This script uses fzf along with lsd to navigate directories and preview files
 # error catching otherwise script continue envn after failiar
 set -euo pipefail
 # error e exit on cmd fail  ,  u for undefined variable, o option name e.g pipefail
+# Function to browse directories and files interactively
 fzfm() {
 	while true; do
 		selection="$(
@@ -42,9 +43,3 @@ fzfm() {
 }
 clear
 fzfm
-# # fzf --reverse  --info right --prompt "Search: " --border "bold" --border-label "$(pwd)/" --prompt "Sea
-# rch: " --bind "left:pos(2)+accept" --bind "right:accept" --bind "shift-up:preview-up" --bind "shift-down
-# :preview-down"  --preview 'cd_pre="$(echo $(pwd)/#echo {})";
-#                     echo "Folder: " $cd_pre;
-#                     echo;
-#                     '
